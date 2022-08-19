@@ -36,6 +36,7 @@
 #define BPF_ALU_MOV	0xb0  ///< eBPF only: mov reg to reg
 #define BPF_ALU_ARSH	0xc0  ///< eBPF only: sign extending shift right
 #define BPF_ALU_END	0xd0  ///< eBPF only: endianness conversion
+#define BPF_ALU_SDIV    0xe0  ///< eBPF only: signed division
 
 ///< Types of jmp instruction
 #define BPF_JUMP_JA	0x00	///< goto

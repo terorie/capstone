@@ -9,6 +9,7 @@
 #include "../../cs_priv.h"
 
 #define EBPF_MODE(ud) (((cs_struct*)ud)->mode & CS_MODE_BPF_EXTENDED)
+#define SBFV2_MODE(ud) (((cs_struct*)ud)->mode & CS_MODE_SBFV2)
 
 const char *BPF_group_name(csh handle, unsigned int id);
 const char *BPF_insn_name(csh handle, unsigned int id);

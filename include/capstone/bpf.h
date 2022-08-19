@@ -178,6 +178,11 @@ typedef enum bpf_insn {
 	BPF_INS_TAX,
 	BPF_INS_TXA,
 
+	///< SBFv2 only
+	BPF_INS_SYSCALL,
+	BPF_INS_SDIV,
+	BPF_INS_SDIV64,
+
 	BPF_INS_ENDING,
 
 	// alias instructions

@@ -143,6 +143,7 @@ typedef enum cs_mode {
 	CS_MODE_M680X_HCS08 = 1 << 10, ///< M680X Freescale/NXP HCS08 mode
 	CS_MODE_BPF_CLASSIC = 0,	///< Classic BPF mode (default)
 	CS_MODE_BPF_EXTENDED = 1 << 0,	///< Extended BPF mode
+	CS_MODE_SBFV2 = 1 << 1,	///< Extended BPF SBFv2 mode
 	CS_MODE_RISCV32  = 1 << 0,        ///< RISCV RV32G
 	CS_MODE_RISCV64  = 1 << 1,        ///< RISCV RV64G
 	CS_MODE_RISCVC   = 1 << 2,        ///< RISCV compressed instructure mode

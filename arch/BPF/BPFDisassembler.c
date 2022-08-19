@@ -275,7 +275,7 @@ static bool decodeALU(cs_struct *ud, MCInst *MI, bpf_internal *bpf)
 
 	/* eBPF */
 
-	if (BPF_OP(bpf->op) > BPF_ALU_END)
+	if (BPF_OP(bpf->op) > BPF_ALU_SDIV)
 		return false;
 	/* ALU64 class doesn't have ENDian */
 	/* ENDian's imm must be one of 16, 32, 64 */
@@ -342,6 +342,9 @@ static bool decodeJump(cs_struct *ud, MCInst *MI, bpf_internal *bpf)
 			return bpf->op == (BPF_CLASS_JMP | BPF_JUMP_EXIT);
 		if (BPF_OP(bpf->op) == BPF_JUMP_CALL) {
 			if (bpf->op == (BPF_CLASS_JMP | BPF_JUMP_CALL)) {
+				if (SBFV2_MODE(ud) && bpf->src == 0) {
+					MCInst_setOpcodePub(MI, BPF_INS_SYSCALL);
+				}
 				MCOperand_CreateImm0(MI, bpf->k);
 				return true;
 			}

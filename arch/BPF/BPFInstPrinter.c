@@ -264,8 +264,10 @@ void BPF_printInst(MCInst *MI, struct SStream *O, void *PrinterInfo)
 
 	insn.detail = NULL;
 	/* set pubOpcode as instruction id */
-	BPF_get_insn_id((cs_struct*)MI->csh, &insn, MCInst_getOpcode(MI));
-	MCInst_setOpcodePub(MI, insn.id);
+	if (MCInst_getOpcodePub(MI) == 0) {
+		BPF_get_insn_id((cs_struct*)MI->csh, &insn, MCInst_getOpcode(MI));
+		MCInst_setOpcodePub(MI, insn.id);
+	}
 
 	SStream_concat(O, BPF_insn_name((csh)MI->csh, insn.id));
 	convert_operands(MI, &bpf);

@@ -47,6 +47,7 @@ static const name_map insn_name_maps[BPF_INS_ENDING] = {
 	{ BPF_INS_XOR, "xor" },
 	{ BPF_INS_MOV, "mov" },
 	{ BPF_INS_ARSH, "arsh" },
+	{ BPF_INS_SDIV, "sdiv" },
 
 	{ BPF_INS_ADD64, "add64" },
 	{ BPF_INS_SUB64, "sub64" },
@@ -61,6 +62,7 @@ static const name_map insn_name_maps[BPF_INS_ENDING] = {
 	{ BPF_INS_XOR64, "xor64" },
 	{ BPF_INS_MOV64, "mov64" },
 	{ BPF_INS_ARSH64, "arsh64" },
+	{ BPF_INS_SDIV64, "sdiv64" },
 
 	{ BPF_INS_LE16, "le16" },
 	{ BPF_INS_LE32, "le32" },
@@ -99,6 +101,7 @@ static const name_map insn_name_maps[BPF_INS_ENDING] = {
 	{ BPF_INS_JSGE,	"jsge" },
 	{ BPF_INS_CALL,	"call" },
 	{ BPF_INS_CALLX, "callx" },
+	{ BPF_INS_SYSCALL, "syscall" },
 	{ BPF_INS_EXIT,	"exit" },
 	{ BPF_INS_JLT, "jlt" },
 	{ BPF_INS_JLE, "jle" },
@@ -247,6 +250,7 @@ static bpf_insn op2insn_alu(unsigned opcode)
 	CASE(XOR);
 	CASE(MOV);
 	CASE(ARSH);
+	CASE(SDIV);
 	}
 #undef CASE
 
