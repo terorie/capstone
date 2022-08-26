@@ -217,7 +217,7 @@ static const struct {
 		BPF_global_init,
 		BPF_option,
 		~(CS_MODE_LITTLE_ENDIAN | CS_MODE_BPF_CLASSIC | CS_MODE_BPF_EXTENDED
-				| CS_MODE_BIG_ENDIAN),
+				| CS_MODE_BIG_ENDIAN | CS_MODE_SBFV2),
 	},
 #else
 	{ NULL, NULL, 0 },
