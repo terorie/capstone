@@ -91,12 +91,12 @@ static bpf_internal* fetch_ebpf(cs_struct *ud, const uint8_t *code,
 }
 
 #define CHECK_READABLE_REG(ud, reg) do { \
-		if (! ((reg) >= BPF_REG_R0 && (reg) <= BPF_REG_R10)) \
+		if (! ((reg) >= BPF_REG_R0 && (reg) <= BPF_REG_R11)) \
 			return false; \
 	} while (0)
 
 #define CHECK_WRITABLE_REG(ud, reg) do { \
-		if (! ((reg) >= BPF_REG_R0 && (reg) < BPF_REG_R10)) \
+		if (! ((reg) >= BPF_REG_R0 && (reg) <= BPF_REG_R11)) \
 			return false; \
 	} while (0)
 

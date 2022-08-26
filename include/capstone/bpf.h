@@ -47,6 +47,7 @@ typedef enum bpf_reg {
 	BPF_REG_R8,
 	BPF_REG_R9,
 	BPF_REG_R10,
+	BPF_REG_R11,
 
 	BPF_REG_ENDING,
 } bpf_reg;
